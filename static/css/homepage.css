@@ -1,0 +1,108 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Background Styling */
+body {
+    background-color: #8E5CD6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #8E5CD6;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Header Section */
+.header {
+    color: white;
+    margin-bottom: 50px;
+}
+
+.logo {
+    width: 300px;
+    margin-bottom: 20px; 
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h1 span {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Portal Box */
+.portal-box {
+    background-color: #222;
+    padding: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.portal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px; 
+}
+
+.portal {
+    text-align: center;
+}
+
+.portal img {
+    width: 100px;
+    padding: auto;
+}
+
+/* Buttons */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.student-btn {
+    background-color: #B68CFF;
+    color: white;
+}
+
+.staff-btn {
+    background-color: #B68CFF;
+    color: white;
+}
+
+/* Login Tip */
+.login-tip {
+    margin-top: 50px; 
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    margin-top: 15px;
+    font-size: 15px;
+    color: white;
+}
