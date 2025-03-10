@@ -19,8 +19,8 @@
                     <button class="student-btn" onclick="redirectToStudentPortal()">Student Portal</button>
                 </div>
                 <div class="portal">
-                    <img src="/static/images/staff-icon.png" alt="Staff Portal">
-                    <button class="staff-btn">Staff Portal</button>
+                    <img src="/static/images/staff-icon.png">
+                    <button class="student-btn" onclick="redirectToStaffPortal()">staff Portal</button>
                 </div>
             </div>
             <p class="login-tip"><b>Login Tip:</b> Credentials are case-sensitive. If you have trouble logging in, contact your HoD or Class Advisor.</p>
@@ -36,4 +36,9 @@
     function redirectToStudentPortal() {
         window.location.href = "/templates/student/student-login.html";
     }
+    
+     function redirectToStaffPortal() {
+        window.location.href = "/templates/staff-login.html"; 
+    }
 </script>
+
