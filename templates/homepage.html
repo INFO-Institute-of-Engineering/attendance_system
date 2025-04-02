@@ -5,30 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFO AMS Portal</title>
     <link rel="stylesheet" href="/static/css/homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="particles"></div>
+    
     <div class="container">
-        <div class="header">
-            <img src="/static/images/INFO-logo.png" alt="Institute Logo" class="logo">
-            <h1>INFO's AMS Portal</h1>
-        </div>
-        <div class="portal-box">
-            <div class="portal-container">
-                <div class="portal">
-                    <img src="/static/images/student-icon.png" alt="Student Portal">
-                    <button class="student-btn" onclick="redirectToStudentPortal()">Student Portal</button>
+        <div class="glass-card">
+            <div class="header">
+                <img src="/static/images/INFO-logo.png" alt="Institute Logo" class="logo">
+                <h1>Attendance Management System</h1>
+                <p class="subtitle">INFO Institute of Engineering</p>
+            </div>
+            
+            <div class="portal-section">
+                <h2>Select Your Portal</h2>
+                
+                <div class="portal-container">
+                    <div class="portal-card" onclick="redirectToStudentPortal()">
+                        <div class="icon-container">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Student Portal</h3>
+                        <p>Access your attendance records, view reports, and more</p>
+                        <button class="portal-btn student-btn">Enter <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    
+                    <div class="portal-card" onclick="redirectToStaffPortal()">
+                        <div class="icon-container">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Staff Portal</h3>
+                        <p>Manage attendance, generate reports, and track student data</p>
+                        <button class="portal-btn staff-btn">Enter <i class="fas fa-arrow-right"></i></button>
+                    </div>
                 </div>
-                <div class="portal">
-                    <img src="/static/images/staff-icon.png">
-                    <button class="student-btn" onclick="redirectToStaffPortal()">staff Portal</button>
+                
+                <div class="login-tip">
+                    <i class="fas fa-info-circle"></i>
+                    <p><b>Login Tip:</b> Credentials are case-sensitive. If you have trouble logging in, contact your HoD or Class Advisor.</p>
                 </div>
             </div>
-            <p class="login-tip"><b>Login Tip:</b> Credentials are case-sensitive. If you have trouble logging in, contact your HoD or Class Advisor.</p>
+            
+            <footer>
+                <div class="footer-content">
+                    <p>Made with <i class="fas fa-heart"></i> by SprinkleLight Technologies</p>
+                    <p>© All Rights Reserved by CSE Department of INFO Institute of Engineering</p>
+                </div>
+            </footer>
         </div>
-        <footer>
-            <p>© All Rights Reserved by CSE Department of INFO Institute of Engineering</p>
-        </footer>
     </div>
+
+    <script src="/static/js/homepage.js"></script>
 </body>
 </html>
 
@@ -41,4 +70,3 @@
         window.location.href = "/templates/staff-login.html"; 
     }
 </script>
-

@@ -4,41 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal</title>
-    <link rel="stylesheet" href="\static\css\studentinterface.css">
+    <link rel="stylesheet" href="/static/css/studentinterface.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>INFO Institute of Engineering</h2>
-        <ul>
-            <li><i class="fas fa-home"></i> Dashboard</li>
-            <li><i class="fas fa-envelope"></i> Leave Request</li>
-            <li><i class="fas fa-user-clock"></i> OD Request</li>
-            <li><i class="fas fa-clock"></i> Half-Day Request</li>
-            <li><i class="fas fa-tasks"></i> Status</li>
-            <li><i class="fas fa-sign-out-alt"></i> Logout</li>
-        </ul>
-    </div>
-    <div class="main-content">
-        <header>
-            <h1>Welcome back, User!</h1>
-            <p>Always stay updated in your student portal</p>
-        </header>
-        <section class="finance">
-            <div class="card">30 Days<br><span>Present This Month</span></div>
-            <div class="card highlight">3 Days<br><span>Leaves Recorded</span></div>
-            <div class="card">25 On-Duty<br><span>Approved</span></div>
-        </section>
-        <section class="courses">
-            <div class="course-card">
-                <p>Computer Science and Engineering</p>
-                <button>View</button>
+    <div class="particles"></div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="/static/images/INFO-logo.png" alt="INFO Logo" class="logo">
+                <h2>INFO Institute of Engineering</h2>
             </div>
-        </section>
-        <section class="notices">
-            <h3>Daily Notice</h3>
-            <div class="notice">Leave Alert: Your Attendance is Below 75%</div>
-            <div class="notice">Exam Alert: You must write the exams without fail.</div>
-        </section>
+            
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="/static/images/profile-placeholder.png" alt="Profile">
+                </div>
+                <h3 class="student-name">User</h3>
+                <p class="student-id">22BCS005</p>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="active">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-envelope"></i>
+                        <span>Leave Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user-clock"></i>
+                        <span>OD Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-clock"></i>
+                        <span>Half-Day Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-tasks"></i>
+                        <span>Status</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>© INFO Institute of Engineering</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <div class="header-content">
+                    <div class="greeting-section">
+                        <h1>Welcome back, <span class="student-name-header">User!</span></h1>
+                        <p>Always stay updated in your student portal</p>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        
+                        <div class="notification-bell">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-count">3</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <section class="attendance-stats">
+                    <h2 class="section-title">Attendance Overview</h2>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon present">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>30 Days</h3>
+                                <p>Present This Month</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card highlight">
+                            <div class="stat-icon absent">
+                                <i class="fas fa-calendar-times"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>3 Days</h3>
+                                <p>Leaves Recorded</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon od">
+                                <i class="fas fa-user-clock"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>25 Days</h3>
+                                <p>On-Duty Approved</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon percentage">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>85%</h3>
+                                <p>Overall Attendance</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="dashboard-grid">
+                    <section class="courses-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Your Courses</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        
+                        <div class="courses-container">
+                            <div class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="course-details">
+                                    <h3>Computer Science and Engineering</h3>
+                                    <p>CSE Department</p>
+                                    <div class="attendance-bar">
+                                        <div class="progress" style="width: 85%"></div>
+                                    </div>
+                                    <div class="attendance-percentage">
+                                        <span>85% Attendance</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-card">
+                                <div class="course-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="course-details">
+                                    <h3>Database Management Systems</h3>
+                                    <p>CSE Department</p>
+                                    <div class="attendance-bar">
+                                        <div class="progress" style="width: 92%"></div>
+                                    </div>
+                                    <div class="attendance-percentage">
+                                        <span>92% Attendance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="notices-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Daily Notices</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        
+                        <div class="notices-container">
+                            <div class="notice-card alert">
+                                <div class="notice-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="notice-content">
+                                    <h3>Attendance Alert</h3>
+                                    <p>Your attendance is below 75% in Advanced Programming.</p>
+                                    <span class="notice-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="notice-card info">
+                                <div class="notice-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="notice-content">
+                                    <h3>Exam Schedule</h3>
+                                    <p>Mid-semester exams will begin from next Monday.</p>
+                                    <span class="notice-time">1 day ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="notice-card success">
+                                <div class="notice-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="notice-content">
+                                    <h3>OD Approved</h3>
+                                    <p>Your On-Duty request for the workshop has been approved.</p>
+                                    <span class="notice-time">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <section class="quick-actions">
+                    <h2 class="section-title">Quick Actions</h2>
+                    
+                    <div class="actions-container">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Apply Leave</h3>
+                        </div>
+                        
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-user-clock"></i>
+                            </div>
+                            <h3>Request OD</h3>
+                        </div>
+                        
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Half-Day</h3>
+                        </div>
+                        
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-file-download"></i>
+                            </div>
+                            <h3>Download Report</h3>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
+
+    <script src="/static/js/studentinterface.js"></script>
 </body>
 </html>

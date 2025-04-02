@@ -1,143 +1,372 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #388E3C;
+    --accent-color: #81C784;
+    --text-color: #2b2d42;
+    --light-text: #8d99ae;
+    --white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Particles background */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 
 .container {
-    display: flex;
-    height: 100vh;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    z-index: 1;
 }
 
+.glass-card {
+    display: flex;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    height: 85vh;
+    max-height: 700px;
+}
+
+/* Left Section (Login Form) */
 .left-section {
-    background-color: #1a1a1a;
-    color: white;
-    width: 50%;
+    flex: 1;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    position: relative;
 }
 
 .logo {
     width: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    align-self: center;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .login-title {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .login-subtitle {
-    font-size: 14px;
-    margin-bottom: 20px;
+    color: var(--white);
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
 .input-group {
-    width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .input-group label {
     display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group label i {
+    font-size: 1.2rem;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .password-wrapper {
-    display: flex;
-    align-items: center;
-    background: white;
-    border-radius: 5px;
-}
-
-.password-wrapper input {
-    flex: 1;
-    border: none;
+    position: relative;
 }
 
 .eye-icon {
-    padding: 10px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
+    color: var(--white);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.eye-icon:hover {
+    opacity: 1;
 }
 
 .forgot-password {
-    font-size: 12px;
     text-align: right;
+    color: var(--white);
+    margin-bottom: 30px;
     cursor: pointer;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.forgot-password:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 .login-btn {
     width: 100%;
-    padding: 10px;
-    background-color: #7b5ea7;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .login-btn:hover {
-    background-color: #654b88;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
 }
 
-.new-staff {
-    margin-top: 15px;
-    font-size: 14px;
+.login-btn i {
+    font-size: 1.1rem;
+}
+
+.new-student-section {
+    margin-top: auto;
+    text-align: center;
+    color: var(--white);
+}
+
+.new-student {
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .info-text {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 5px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.5;
 }
 
+.back-to-home {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-to-home a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.back-to-home a:hover {
+    opacity: 1;
+}
+
+/* Right Section (Illustration) */
 .right-section {
-    background-color: #8d5bbf;
-    color: white;
-    width: 50%;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    position: relative;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 40px;
+}
+
+.welcome-content {
+    margin-bottom: 40px;
 }
 
 .welcome-text {
-    font-size: 28px;
-    font-weight: 600;
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-text span {
-    font-weight: 700;
+    font-size: 2.5rem;
 }
 
 .subtitle {
-    font-size: 14px;
-    margin-bottom: 20px;
+    color: var(--white);
+    opacity: 0.9;
 }
 
 .illustration {
     width: 80%;
-    max-width: 300px;
-    margin-bottom: 20px;
+    max-width: 400px;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
 }
 
 .footer-text {
-    font-size: 12px;
+    position: absolute;
+    bottom: 20px;
+    color: var(--white);
+    font-size: 0.8rem;
+    opacity: 0.7;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .glass-card {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+    }
+    
+    .right-section {
+        display: none;
+    }
+    
+    .left-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .left-section {
+        padding: 25px 20px;
+    }
+    
+    .login-title {
+        font-size: 2rem;
+    }
+    
+    .login-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .input-group label {
+        font-size: 0.9rem;
+    }
+    
+    .input-group input {
+        padding: 10px;
+    }
+    
+    .login-btn {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-section {
+        padding: 20px 15px;
+    }
+    
+    .logo {
+        width: 100px;
+    }
+    
+    .login-title {
+        font-size: 1.8rem;
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+    
+    .forgot-password {
+        margin-bottom: 20px;
+    }
+    
+    .new-student-section {
+        margin-top: 30px;
+    }
+}
+
+/* Animation for floating effect */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }

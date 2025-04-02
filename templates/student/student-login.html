@@ -5,48 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
     <link rel="stylesheet" href="/static/css/student-login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-   <div class="container">
-        <!-- Left Section (Login) -->
-          <!-- Left Section (Login) -->
-        <div class="left-section">
-            <img src="/static/images/INFO-logo.png" alt="Institute Logo" class="logo">
-            <h1 class="login-title">Login</h1>
-            <p class="login-subtitle">Enter your Account Details</p>
-            
-            <form id="loginForm">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter your username">
-                </div>
-
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" placeholder="Enter your password">
-                        <span class="eye-icon">&#128065;</span>
+    <div class="particles"></div>
+    
+    <div class="container">
+        <div class="glass-card">
+            <div class="left-section">
+                <img src="/static/images/INFO-logo.png" alt="Institute Logo" class="logo">
+                <h1 class="login-title">Login</h1>
+                <p class="login-subtitle">Enter your Account Details</p>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">
+                            <i class="fas fa-user"></i> Username
+                        </label>
+                        <input type="text" id="username" name="username" required>
                     </div>
+
+                    <div class="input-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i> Password
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" required>
+                            <span class="eye-icon"><i class="fas fa-eye"></i></span>
+                        </div>
+                    </div>
+
+                    <p class="forgot-password">Forgot Password?</p>
+
+                    <button type="submit" class="login-btn">
+                        Login <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </form>
+
+                <div class="new-student-section">
+                    <p class="new-student">New Student?</p>
+                    <p class="info-text">Kindly contact your class advisor to facilitate your access to the student portal.</p>
                 </div>
+                
+                <div class="back-to-home">
+                    <a href="/templates/homepage.html">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
 
-                <p class="forgot-password">Forgot Password?</p>
-
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-
-            <p class="new-student">New Student?</p>
-            <p class="info-text">Kindly contact your class advisor to facilitate your access to the student portal.</p>
-        </div>
-
-        <!-- Right Section (Illustration & Heading) -->
-        <div class="right-section">
-            <h1 class="welcome-text">Welcome to <br><span>Student Portal</span></h1>
-            <p class="subtitle">Login to access your account</p>
-            <img src="/static/images/Student-login.png" alt="Student Portal Illustration" class="illustration">
-            <p class="footer-text">© All Rights Reserved by CSE Department of INFO Institute of Engineering</p>
+            <div class="right-section">
+                <div class="welcome-content">
+                    <h1 class="welcome-text">Welcome to <br><span>Student Portal</span></h1>
+                    <p class="subtitle">Login to access your account</p>
+                </div>
+                <img src="/static/images/Student-login.png" alt="Student Portal Illustration" class="illustration">
+                <p class="footer-text">© All Rights Reserved by CSE Department of INFO Institute of Engineering</p>
+            </div>
         </div>
     </div>
+
+    <script src="/static/js/student-login.js"></script>
 </body>
 </html>
-<script src="login.js"></script> 
