@@ -146,13 +146,13 @@ async function fetchStudentData() {
         
         // For demo purposes, using mock data
         const data = {
-            name: 'John Doe',
-            id: 'CSE2023001',
+            name: 'Alphin V Thomas',
+            id: '22BCS005',
             attendance: {
                 present: 30,
                 absent: 3,
-                od: 25,
-                percentage: 85
+                od: 10,
+                percentage: 92
             },
             courses: [
                 {
@@ -170,20 +170,20 @@ async function fetchStudentData() {
                 {
                     type: 'alert',
                     title: 'Attendance Alert',
-                    message: 'Your attendance is below 75% in Advanced Programming.',
+                    message: 'Your attendance is below 75%. Please take necessary action.',
                     time: '2 hours ago'
                 },
                 {
                     type: 'info',
                     title: 'Exam Schedule',
-                    message: 'Mid-semester exams will begin from next Monday.',
+                    message: 'Internal exams will begin from next Monday.',
                     time: '1 day ago'
                 },
                 {
                     type: 'success',
                     title: 'OD Approved',
-                    message: 'Your On-Duty request for the workshop has been approved.',
-                    time: '2 days ago'
+                    message: 'Your On-Duty request for the AMS Portal Development has been approved.',
+                    time: '1 days ago'
                 }
             ]
         };
