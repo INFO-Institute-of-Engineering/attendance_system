@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Request | INFO AMS</title>
+    <link rel="stylesheet" href="/static/css/leave-request.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="/static/images/INFO-logo.png" alt="INFO Logo" class="logo">
+                <h2>INFO Institute</h2>
+            </div>
+            
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="/static/images/profile-placeholder.png" alt="Profile">
+                </div>
+                <h3 class="student-name">John Doe</h3>
+                <p class="student-id">CSE2023001</p>
+            </div>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="/templates/student/studentinterface.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="/templates/student/leave-request.html">
+                        <i class="fas fa-envelope"></i>
+                        <span>Leave Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user-clock"></i>
+                        <span>OD Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-clock"></i>
+                        <span>Half-Day Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-tasks"></i>
+                        <span>Status</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>© INFO Institute of Engineering</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <div class="header-content">
+                    <div class="page-title">
+                        <h1>Leave Request</h1>
+                        <p>Submit a new leave application</p>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <div class="notification-bell">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-count">2</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="leave-request-container">
+                <div class="form-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-file-alt"></i> New Leave Application</h2>
+                    </div>
+                    
+                    <form id="leaveRequestForm">
+                        <div class="form-group">
+                            <label for="leaveType">Leave Type</label>
+                            <select id="leaveType" required>
+                                <option value="" disabled selected>Select leave type</option>
+                                <option value="medical">Medical Leave</option>
+                                <option value="personal">Personal Leave</option>
+                                <option value="family">Family Emergency</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group date-range">
+                            <div class="date-input">
+                                <label for="fromDate">From Date</label>
+                                <input type="date" id="fromDate" required>
+                            </div>
+                            
+                            <div class="date-input">
+                                <label for="toDate">To Date</label>
+                                <input type="date" id="toDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reason">Reason for Leave</label>
+                            <textarea id="reason" rows="4" placeholder="Please provide detailed reason for your leave request..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachment">Attachment (if any)</label>
+                            <div class="file-upload">
+                                <input type="file" id="attachment">
+                                <label for="attachment" class="file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i> Choose File
+                                </label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                            <p class="file-hint">Upload supporting documents (Medical certificate, etc.)</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactNumber">Emergency Contact Number</label>
+                            <input type="tel" id="contactNumber" placeholder="Enter your contact number during leave period">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Submit Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="status-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-tasks"></i> Request Status</h2>
+                    </div>
+                    
+                    <div class="status-timeline">
+                        <div class="timeline-item active">
+                            <div class="timeline-icon">
+                                <i class="fas fa-file-import"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Request Submitted</h3>
+                                <p>Your request has been submitted successfully</p>
+                                <span class="timeline-date">May 15, 2023 - 10:30 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item active">
+                            <div class="timeline-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Advisor Approved</h3>
+                                <p>Your class advisor has approved your request</p>
+                                <span class="timeline-date">May 15, 2023 - 2:45 PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item pending">
+                            <div class="timeline-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>HoD Approval</h3>
+                                <p>Waiting for HoD approval</p>
+                                <span class="timeline-date">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-requests">
+                        <h3>Recent Requests</h3>
+                        <div class="request-history">
+                            <div class="history-item">
+                                <div class="history-date">
+                                    <span class="month">Apr</span>
+                                    <span class="day">10</span>
+                                </div>
+                                <div class="history-details">
+                                    <h4>Medical Leave</h4>
+                                    <p>Apr 10 - Apr 12, 2023</p>
+                                    <span class="status approved">Approved</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history-item">
+                                <div class="history-date">
+                                    <span class="month">Mar</span>
+                                    <span class="day">22</span>
+                                </div>
+                                <div class="history-details">
+                                    <h4>Personal Leave</h4>
+                                    <p>Mar 22 - Mar 23, 2023</p>
+                                    <span class="status rejected">Rejected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/leave-request.js"></script>
+</body>
+</html>
