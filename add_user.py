@@ -1,11 +1,14 @@
 from pymongo import MongoClient
 from flask_bcrypt import Bcrypt
+import os
+from dotenv import load_dotenv
 
 # Initialize bcrypt for password hashing
 bcrypt = Bcrypt()
 
 # Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+MONGO_URI = (os.getenv("MONGO_URI"))
+client = MongoClient(MONGO_URI)
 db = client["attendance_db"]
 users_collection = db["users"]
 
