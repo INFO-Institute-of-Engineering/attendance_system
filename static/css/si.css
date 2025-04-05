@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #6e40c9;
+  color: #fff;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #5b2fa7;
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #7b51d3;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #8d66e0;
+}
+
+.main {
+  margin-left: 270px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #814dd8;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.status .card {
+  flex: 1;
+  min-width: 200px;
+}
+
+.requests table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #753cd0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.requests th, .requests td {
+  padding: 12px;
+  text-align: left;
+}
+
+.requests th {
+  background-color: #5a28a0;
+}
+
+.requests tr:nth-child(even) {
+  background-color: #6d38b8;
+}
+
+.action-buttons button {
+  padding: 6px 12px;
+  border: none;
+  margin-right: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.approve {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.reject {
+  background-color: #f44336;
+  color: #fff;
+}
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: right 100px;;
+}
